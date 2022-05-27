@@ -12,5 +12,16 @@
     <select id="findAll" resultType="account">
         select * from account
     </select>
-
+<!--    Account get(Integer id);-->
+    <select id="get" resultType="account">
+        select * from account where id=#{id}
+    </select>
+<!--    void update(Account account);-->
+    <update id="update">
+        update account set name=#{name},money=#{money} where id=#{id}
+    </update>
+<!--void delete(Integer id);-->
+    <delete id="delete">
+        delete from account where id=#{id}
+    </delete>
 </mapper>

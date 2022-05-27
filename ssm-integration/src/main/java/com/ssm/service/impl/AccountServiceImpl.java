@@ -34,4 +34,20 @@ public class AccountServiceImpl implements AccountService {
         List<Account> accountList = accountMapper.findAll();
         return accountList;
     }
+
+    @Override
+    public void update(Account account) {
+        accountMapper.update(account);
+    }
+
+    @Override
+    public Account get(Integer id) {
+        Account account = accountMapper.get(id);
+        return account;
+    }
+
+    @Override
+    public void delete(Integer id) {
+        accountMapper.delete(id);
+    }
 }

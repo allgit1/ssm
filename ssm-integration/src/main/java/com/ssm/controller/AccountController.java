@@ -4,8 +4,8 @@ import com.ssm.pojo.Account;
 import com.ssm.service.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
@@ -28,7 +28,7 @@ public class AccountController {
     }
 
     //查询
-    @RequestMapping("/account")
+    @GetMapping("/account")
     public ModelAndView findAll(){
         List<Account> accountList = accountService.findAll();
         ModelAndView modelAndView = new ModelAndView();
@@ -36,4 +36,21 @@ public class AccountController {
         modelAndView.setViewName("account");
         return modelAndView;
     }
+//    @GetMapping("/account/{id}")
+//    public String getAccount(@PathVariable("id") Integer id, Model model){
+//        Account account = accountService.get(id);
+//        model.addAttribute("account",account);
+//        return "update";
+//    }
+    @PutMapping("/account")
+    public String update(Account account){
+        accountService.update(account);
+        return "redirect:account";
+    }
+    @DeleteMapping("/account/{id}")
+    public String delete(@PathVariable("id") Integer id){
+        accountService.delete(id);
+        return "redirect:/account";
+    }
+
 }

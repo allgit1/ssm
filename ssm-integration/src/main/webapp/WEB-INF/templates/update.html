@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="post" th:action="@{/account}">
+    <input type="hidden" name="_method" value="put">
+    <input type="hidden" name="id" th:value="${account.id}">
+    账户名称:<input type="text" name="name" th:value="${account.name}"><br/>
+    账户余额:<input type="text" name="money" th:value="${account.money}"><br/>
+    <input type="submit" value="保存">
+</form>
+</body>
+</html>

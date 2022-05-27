@@ -30,5 +30,5 @@
         </property>
     </bean>
 <!--    开放静态资源访问权限-->
-    <mvc:default-servlet-handler></mvc:default-servlet-handler>
+    <mvc:default-servlet-handler/>
 </beans>

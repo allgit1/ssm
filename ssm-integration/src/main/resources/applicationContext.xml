@@ -19,7 +19,7 @@
         <property name="password" value="${jdbc.password}"></property>
     </bean>
 
-    <!--配置sessionFactory-->
+    <!--配置sessionFactory，减少service层代码，可以直接导入对应的mapper，就可以直接使用，-->
     <bean id="sqlSessionFactoryBean" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource"></property>
         <!--加载mybatis核心文件-->
